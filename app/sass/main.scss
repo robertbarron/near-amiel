@@ -1,0 +1,143 @@
+#main {
+	width: 80%;
+	margin: 0 auto;
+	font-size: 14px;
+	.clear {
+		clear: both;
+	}
+	#header {
+		margin: 0 auto;
+		width: 100%;
+		.logo {
+			float:left;
+			width: 30%;
+			padding-top: 3px;
+			img {
+				width: 80%;
+			}
+		}
+		.title {
+			float:left;
+			width: 30%;
+			text-align: center;
+			h1 {
+				font-size: 2em;
+			}
+		}
+		.action-icons {
+			float:right;
+			width: 30%;
+			padding-top: 20px;
+			.ico {
+				cursor: pointer;
+				float: right;
+				font-size: 2em;
+			}
+		}
+	}
+	#list-container {
+		.item {
+			height: 50px;
+			border: solid 3px #000;
+			border-radius: 5px;
+			background: #eee;
+			margin-bottom: 15px;
+			&:nth-child(2n) {
+				background: #fff;
+			}
+			&.selected {
+				background: #B9D2E5;
+			}
+			.id-item {
+				font-size: 2em;
+				width: 5%;
+				float: left;
+				padding-top: 7px;
+				padding-left: 9px;
+			}
+			.check-item {
+				width: 5%;
+				float: left;
+				padding-top: 15px;
+			}
+			.name-item {
+				width:70%;
+				float: left;
+				padding-top: 17px;
+			}
+			.action-item {
+				width:18%;
+				float: right;
+				.icon-container {
+					padding-top: 9px;
+					.ico {
+						cursor: pointer;
+						float: right;
+						font-size: 2em;
+					}
+				}
+			}
+		}
+	}
+	#new-item {
+		height: 300px;
+		background: #fff;
+		z-index: 3;
+		margin: 0 auto;
+		position: relative;
+		right: 0;
+		float: right;
+		top: 10%;
+		&.display-none {
+			display: none;
+		}
+		.edit-item {
+			.close-edit-item {
+				float: left;
+				color: #999;
+				font-weight: 900;
+				cursor: pointer;
+				background: #ddd;
+				font-size: 1em;
+				padding-left: 10px;
+				padding-right: 10px;
+				margin-top: 5px;
+				margin-right: 15px;
+				border-right: 31px;
+				.close-container {
+					
+				}
+			}
+		}
+		.close-new-item {
+			float: left;
+			color: #f00;
+			font-weight: 900;
+			cursor: pointer;
+			background: #eee;
+			font-size: 2em;
+			border-radius: 30px;
+			padding-left: 10px;
+			padding-right: 10px;
+			margin-top: 2px;
+			margin-right: 15px;
+			border: solid 1px #ddd;
+			.close-container {
+				padding-top: 3px;
+			}
+		}
+		.name {
+			height: 30px;
+			padding: 3px;
+			border-radius: 5px;
+			border: 3px;
+			border: solid 1px #eee;
+		}
+		.add-item-button {
+			border-radius: 3px; 
+			padding: 10px 21px;
+			border: solid 1px #000;
+			text-align: center;
+		}
+	}
+}
