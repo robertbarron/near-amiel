@@ -1,4 +1,8 @@
-// QUnit.test("AddElements" , function (assert) {
-// 	playlist = new PlayList('list-container');
-// 	assert.equal(playlist.addElement('1','Song Name'), true);
-// });
+QUnit.test("function addElements test" , function (assert) {
+	expect(1);
+
+	playlist = new PlayList();
+
+	playlist.addElement(1,'Song Name');
+	assert.equal(playlist.getPlaylist().length, 1);
+});

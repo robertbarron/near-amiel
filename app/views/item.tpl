@@ -6,7 +6,7 @@
         <input type="checkbox" data-index="{{id}}"/>
     </div>
     <div class="name-item">
-        <span>{{song-name}}</span>
+        <span>{{name}}</span>
     </div>
     <div class="action-item">
         <div class="icon-container">

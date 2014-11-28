@@ -1,37 +1,53 @@
 #main {
-	width: 80%;
+	max-width: 962px;
+	width: 962px;
 	margin: 0 auto;
 	font-size: 14px;
+	font-family: Tahoma, Geneva, sans-serif;
 	.clear {
 		clear: both;
 	}
 	#header {
 		margin: 0 auto;
 		width: 100%;
+		margin-bottom:19px;
 		.logo {
 			float:left;
-			width: 30%;
+			width: 33%;
 			padding-top: 3px;
 			img {
-				width: 80%;
+				max-width: 180px;
+				width: 100%;
 			}
 		}
 		.title {
 			float:left;
-			width: 30%;
+			width: 33%;
 			text-align: center;
+			margin-top: 14px;
 			h1 {
-				font-size: 2em;
+				font-size: 2.5em;
+				font-weight: 900;
+				margin:0;
+				padding: 0;
 			}
 		}
 		.action-icons {
 			float:right;
-			width: 30%;
-			padding-top: 20px;
+			width: 33%;
+			padding-top: 8px;
 			.ico {
 				cursor: pointer;
 				float: right;
-				font-size: 2em;
+				font-size: 3em;
+				-webkit-transition: all .1s ease;
+				transition: all .1s ease;
+				&:hover {
+					background: #e6411e;
+					color:#fff;
+					-webkit-transition: all .1s ease;
+					transition: all .1s ease;
+				}
 			}
 		}
 	}
@@ -40,7 +56,7 @@
 			height: 50px;
 			border: solid 3px #000;
 			border-radius: 5px;
-			background: #eee;
+			background: #cccccc;
 			margin-bottom: 15px;
 			&:nth-child(2n) {
 				background: #fff;
@@ -56,7 +72,7 @@
 				padding-left: 9px;
 			}
 			.check-item {
-				width: 5%;
+				width: 26px;
 				float: left;
 				padding-top: 15px;
 			}
@@ -74,6 +90,19 @@
 						cursor: pointer;
 						float: right;
 						font-size: 2em;
+						border-radius: solid 1px #ddd;
+						-webkit-transition: all .1s ease;
+						transition: all .1s ease;
+						&.icon-minus {
+							margin-right: 8px;
+						}
+						&:hover {
+							background: #e6411e;
+							border: solid 1px #eee;
+							color: #fff;
+							-webkit-transition: all .1s ease;
+							transition: all .1s ease;
+						}
 					}
 				}
 			}

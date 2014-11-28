@@ -1,5 +1,5 @@
 JPLoad = {
-    doRequest : function (url, callback) {
+    _doRequest : function (url, callback) {
         var _this = this,
             xhr;
 
@@ -42,32 +42,29 @@ JPLoad = {
         xhr.send('');
     },
 
-    getTemplate : function (templateURL, callback) {
-        var _this = this;
-        _this.doRequest(templateURL, function (response) {
-            if (response) {
+    getView : function (templateURL, callback) {
+        this._doRequest(templateURL, function (response) {
+            if (response)
                 callback(response);
-            }
         });
     },
 
-    escapeRegExp: function (str) {
+    _escapeRegExp: function (str) {
         return str.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&");
     },
 
-    injectData : function (templateData, find, replace) {
-        var _this = this;
-        return templateData.replace(new RegExp(_this.escapeRegExp(find), 'g'), replace);
+    _injectData : function (templateData, find, replace) {
+        return templateData.replace(new RegExp(this._escapeRegExp(find), 'g'), replace);
     },
 
-    parseObject : function (pObject, htmlData, elementID, appendFlag, callback) {
+    _parseObject : function (pObject, htmlData, elementID, appendFlag, callback) {
         var _this = this,
             elementsInData = Object.keys(pObject).length,
             counted = 0;
 
-        var waitForIt = function () {
+        var _waitForIt = function () {
             for (var key in pObject) {
-                htmlData = _this.injectData(htmlData, '{{' + key + '}}', pObject[key]);
+                htmlData = _this._injectData(htmlData, '{{' + key + '}}', pObject[key]);
                 counted++;
             }
             if (counted >= elementsInData) {
@@ -83,41 +80,33 @@ JPLoad = {
                 }
             } else {
                 setTimeout(function () {
-                    waitForIt();
+                    _waitForIt();
                 },20);
             }
         };
-        waitForIt();
+        _waitForIt();
     },
-    loadTemplate : function (htmlData, elementID, oData, callback) {
-        var _this = this;
-
+    loadVew : function (htmlData, elementID, oData, callback) {
         if (oData !== undefined) {
-            _this.parseObject(oData, htmlData, elementID, false, function (response) {
+            this._parseObject(oData, htmlData, elementID, false, function (response) {
                 if (response) {
-                    if (callback) {
+                    if (callback)
                         callback(true);
-                    }
                 }
             });
         } else {
             document.getElementById(elementID).innerHTML = htmlData;
-            if (callback) {
+            if (callback)
                 callback(true);
-            }
         }
     },
 
-    appendHTML : function (htmlData, elementID, oData, callback) {
-        var _this = this;
-    
-
+    appendView : function (htmlData, elementID, oData, callback) {
         if (oData !== undefined) {
-            _this.parseObject(oData, htmlData, elementID, true, function (response) {
+            this._parseObject(oData, htmlData, elementID, true, function (response) {
                 if (response) {
-                    if (callback) {
+                    if (callback)
                         callback(true);
-                    }
                 }
             });
         } else {
@@ -125,9 +114,8 @@ JPLoad = {
 
             divHelper.innerHTML = htmlData;
             document.getElementById(elementID).appendChild(divHelper);
-            if (callback) {
+            if (callback)
                 callback(true);
-            }
         }
     },
 };

@@ -1,67 +1,84 @@
 /* line 1, ../sass/main.scss */
 #main {
-  width: 80%;
+  max-width: 962px;
+  width: 962px;
   margin: 0 auto;
   font-size: 14px;
+  font-family: Tahoma, Geneva, sans-serif;
 }
-/* line 5, ../sass/main.scss */
+/* line 7, ../sass/main.scss */
 #main .clear {
   clear: both;
 }
-/* line 8, ../sass/main.scss */
+/* line 10, ../sass/main.scss */
 #main #header {
   margin: 0 auto;
   width: 100%;
+  margin-bottom: 19px;
 }
-/* line 11, ../sass/main.scss */
+/* line 14, ../sass/main.scss */
 #main #header .logo {
   float: left;
-  width: 30%;
+  width: 33%;
   padding-top: 3px;
 }
-/* line 15, ../sass/main.scss */
+/* line 18, ../sass/main.scss */
 #main #header .logo img {
-  width: 80%;
-}
-/* line 19, ../sass/main.scss */
-#main #header .title {
-  float: left;
-  width: 30%;
-  text-align: center;
+  max-width: 180px;
+  width: 100%;
 }
 /* line 23, ../sass/main.scss */
-#main #header .title h1 {
-  font-size: 2em;
+#main #header .title {
+  float: left;
+  width: 33%;
+  text-align: center;
+  margin-top: 14px;
 }
-/* line 27, ../sass/main.scss */
+/* line 28, ../sass/main.scss */
+#main #header .title h1 {
+  font-size: 2.5em;
+  font-weight: 900;
+  margin: 0;
+  padding: 0;
+}
+/* line 35, ../sass/main.scss */
 #main #header .action-icons {
   float: right;
-  width: 30%;
-  padding-top: 20px;
+  width: 33%;
+  padding-top: 8px;
 }
-/* line 31, ../sass/main.scss */
+/* line 39, ../sass/main.scss */
 #main #header .action-icons .ico {
   cursor: pointer;
   float: right;
-  font-size: 2em;
+  font-size: 3em;
+  -webkit-transition: all .1s ease;
+  transition: all .1s ease;
 }
-/* line 39, ../sass/main.scss */
+/* line 45, ../sass/main.scss */
+#main #header .action-icons .ico:hover {
+  background: #e6411e;
+  color: #fff;
+  -webkit-transition: all .1s ease;
+  transition: all .1s ease;
+}
+/* line 55, ../sass/main.scss */
 #main #list-container .item {
   height: 50px;
   border: solid 3px #000;
   border-radius: 5px;
-  background: #eee;
+  background: #cccccc;
   margin-bottom: 15px;
 }
-/* line 45, ../sass/main.scss */
+/* line 61, ../sass/main.scss */
 #main #list-container .item:nth-child(2n) {
   background: #fff;
 }
-/* line 48, ../sass/main.scss */
+/* line 64, ../sass/main.scss */
 #main #list-container .item.selected {
   background: #B9D2E5;
 }
-/* line 51, ../sass/main.scss */
+/* line 67, ../sass/main.scss */
 #main #list-container .item .id-item {
   font-size: 2em;
   width: 5%;
@@ -69,34 +86,49 @@
   padding-top: 7px;
   padding-left: 9px;
 }
-/* line 58, ../sass/main.scss */
+/* line 74, ../sass/main.scss */
 #main #list-container .item .check-item {
-  width: 5%;
+  width: 26px;
   float: left;
   padding-top: 15px;
 }
-/* line 63, ../sass/main.scss */
+/* line 79, ../sass/main.scss */
 #main #list-container .item .name-item {
   width: 70%;
   float: left;
   padding-top: 17px;
 }
-/* line 68, ../sass/main.scss */
+/* line 84, ../sass/main.scss */
 #main #list-container .item .action-item {
   width: 18%;
   float: right;
 }
-/* line 71, ../sass/main.scss */
+/* line 87, ../sass/main.scss */
 #main #list-container .item .action-item .icon-container {
   padding-top: 9px;
 }
-/* line 73, ../sass/main.scss */
+/* line 89, ../sass/main.scss */
 #main #list-container .item .action-item .icon-container .ico {
   cursor: pointer;
   float: right;
   font-size: 2em;
+  border-radius: solid 1px #ddd;
+  -webkit-transition: all .1s ease;
+  transition: all .1s ease;
 }
-/* line 82, ../sass/main.scss */
+/* line 96, ../sass/main.scss */
+#main #list-container .item .action-item .icon-container .ico.icon-minus {
+  margin-right: 8px;
+}
+/* line 99, ../sass/main.scss */
+#main #list-container .item .action-item .icon-container .ico:hover {
+  background: #e6411e;
+  border: solid 1px #eee;
+  color: #fff;
+  -webkit-transition: all .1s ease;
+  transition: all .1s ease;
+}
+/* line 111, ../sass/main.scss */
 #main #new-item {
   height: 300px;
   background: #fff;
@@ -107,11 +139,11 @@
   float: right;
   top: 10%;
 }
-/* line 91, ../sass/main.scss */
+/* line 120, ../sass/main.scss */
 #main #new-item.display-none {
   display: none;
 }
-/* line 95, ../sass/main.scss */
+/* line 124, ../sass/main.scss */
 #main #new-item .edit-item .close-edit-item {
   float: left;
   color: #999;
@@ -125,7 +157,7 @@
   margin-right: 15px;
   border-right: 31px;
 }
-/* line 112, ../sass/main.scss */
+/* line 141, ../sass/main.scss */
 #main #new-item .close-new-item {
   float: left;
   color: #f00;
@@ -140,11 +172,11 @@
   margin-right: 15px;
   border: solid 1px #ddd;
 }
-/* line 125, ../sass/main.scss */
+/* line 154, ../sass/main.scss */
 #main #new-item .close-new-item .close-container {
   padding-top: 3px;
 }
-/* line 129, ../sass/main.scss */
+/* line 158, ../sass/main.scss */
 #main #new-item .name {
   height: 30px;
   padding: 3px;
@@ -152,7 +184,7 @@
   border: 3px;
   border: solid 1px #eee;
 }
-/* line 136, ../sass/main.scss */
+/* line 165, ../sass/main.scss */
 #main #new-item .add-item-button {
   border-radius: 3px;
   padding: 10px 21px;

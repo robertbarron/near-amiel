@@ -5,14 +5,17 @@ function PlayList ($id) {
 }
 
 PlayList.prototype.loadPlaylist = function () {
-	var _this = this,
-		conter = 0;
+	var _this = this;
 	$.get(this.api_url, function( data ) {
 		$.each(data.items, function (index, item) {
 			_this.addElement(item.id, item.name);
 		});
 	});
 	return true;
+};
+
+PlayList.prototype.getPlaylist = function () {
+	return this.items;
 };
 
 PlayList.prototype.addElement = function (id, name, callback) {
